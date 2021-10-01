@@ -258,14 +258,11 @@ public class ApustuaKopiatuGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				BLFacade facade = MainGUI.getBusinessLogic();
 				Bezero kopiatua= facade.getKopiatzenDu(b);
-				if(kopiatua==null) {
-					return;
-				}else {
+				if(kopiatua!=null) {
 					facade.utziKopiatzeari(b,kopiatua);
 					lblCopyingCurrently.setText(ResourceBundle.getBundle("Etiquetas").getString("NoCopy"));
 					UtziKopiatzeari.setEnabled(false);
 				}
-				
 			}
 		});
 		UtziKopiatzeari.setBounds(296, 58, 123, 21);

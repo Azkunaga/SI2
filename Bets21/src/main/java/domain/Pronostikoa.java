@@ -104,6 +104,11 @@ public class Pronostikoa implements Serializable{
 	}
 	
 	@Override
+	public int hashCode() {
+		return 0;
+	}
+	
+	@Override
 	public String toString() {
 		return izenburua+", kuota= "+kuota;
 	}

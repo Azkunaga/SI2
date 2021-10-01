@@ -71,7 +71,7 @@ public class ApustuaConfirmGUI extends JFrame {
 		}
 	}
 
-	private void jbInit() throws Exception {
+	private void jbInit() {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(1026, 455));

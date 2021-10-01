@@ -46,11 +46,23 @@ public abstract class Pertsona implements Serializable{
 		this.pasahitza = pasahitza;
 	}
 	
+	@Override
 	public boolean equals (Object o) {
+		if (this == o)
+			return true;
+		if (o == null)
+			return false;
+		if (getClass() != o.getClass())
+			return false;
 		Pertsona bestea = (Pertsona) o;
-		return this.erabiltzailea.equals(bestea.erabiltzailea);
+		if (!this.erabiltzailea.equals(bestea.erabiltzailea))
+			return false;
+		return true;
 	}
 	
-	
+	@Override
+	public int hashCode() {
+		return 0;
+	}
 	
 }

@@ -199,4 +199,9 @@ public class Question implements Serializable {
 		return true;
 	}
 	
+	@Override
+	public int hashCode() {
+		return 0;
+	}
+	
 }

@@ -285,7 +285,7 @@ public class ApustuaKopiatuGUI extends JFrame {
 		if (cop2==null) {
 			lblAllow.setText("");
 		} else {
-			if (!(cop.isKopiatu())) {
+			if (!(cop2.isKopiatu())) {
 				lblAllow.setText("X");
 				lblAllow.setForeground(Color.RED);		
 			}else {

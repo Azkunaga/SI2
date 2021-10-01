@@ -219,7 +219,7 @@ public class MugimenduakIkusiGUI extends JFrame {
 				BLFacade facade = MainGUI.getBusinessLogic();
 				java.util.Date data= facade.newDate(Integer.parseInt(textUrtea.getText()), comboHilabeteak.getSelectedIndex(), Integer.parseInt(textEguna.getText()));
 				double etekinak=facade.etekinakKalkulatu(b, data);
-				btnEtekinakLortu.setText(ResourceBundle.getBundle("Etiquetas").getString("Etekina")+" "+String.valueOf(etekinak));
+				btnEtekinakLortu.setText(ResourceBundle.getBundle("Etiquetas").getString("Etekina")+" "+ etekinak);
 				btnEtekinakLortu.setEnabled(false);
 			}
 		});

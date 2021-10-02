@@ -85,6 +85,7 @@ public class RegisterDAW {
 
 	}
 
+	//Dena ondo joan bada
 	@Test
 	public void test3() {
 		String erabiltzailea = "Erab1";

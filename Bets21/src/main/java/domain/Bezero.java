@@ -40,12 +40,11 @@ public class Bezero extends Pertsona implements Serializable{
 	
 	
 	
-	public Bezero(String erabiltzailea, String pasahitza, String izena, String abizena, String nA, Date jaiotzeData,
-			int telZenb, String postaElek) {
+	public Bezero(String erabiltzailea, String pasahitza, String izena, String abizena, String nA, Date jaiotzeData, int telZenb, String postaElek) {
 		super(erabiltzailea, pasahitza);
 		this.izena = izena;
 		this.abizena = abizena;
-		NA = nA;
+		this.NA = nA;
 		this.jaiotzeData = jaiotzeData;
 		this.telZenb = telZenb;
 		this.postaElek = postaElek;

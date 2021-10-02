@@ -14,11 +14,11 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({Admin.class,Bezero.class,Langilea.class})
 public abstract class Pertsona implements Serializable{
+
 	/**
-	 * 
+	  * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
 	@Id
 	@XmlID
 	private String erabiltzailea;

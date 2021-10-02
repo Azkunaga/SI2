@@ -34,9 +34,11 @@ public class RegisterDAW {
 		try {
 			int a = testDA.register(b);
 			if (a == 0) {
-				int emaitza = sut.register(new Bezero("Erab1", "123", "Jon", "Jauregi", "12345678c",
-						new Date(1997, 5, 3), 945677777, "jon@gmail.com"));
-				assertEquals(emaitza, 1);
+				Bezero proba = new Bezero("Erab1", "123", "Jon", "Jauregi", "12345678c", new Date(1997, 5, 3),
+						945677777, "jon@gmail.com");
+				int emaitza = sut.register(proba);
+				//Espero den emaitza lortzea egiaztatu
+				assertEquals(1, emaitza);
 			} else {
 				fail("Aurreko probako bezero db jarraitzen du");
 			}
@@ -61,8 +63,10 @@ public class RegisterDAW {
 		try {
 			int a = testDA.register(b);
 			if (a == 0) {
-				int emaitza = sut.register(new Bezero("Erab2", "123", "Jon", "Jauregi", "72756771c",
-						new Date(1997, 5, 3), 945677777, "jon@gmail.com"));
+				Bezero proba = new Bezero("Erab2", "123", "Jon", "Jauregi", "72756771c", new Date(1997, 5, 3),
+						945677777, "jon@gmail.com");
+				int emaitza = sut.register(proba);
+				//Espero den emaitza lortzea egiaztatu
 				assertEquals(emaitza, 2);
 			} else {
 				fail("Aurreko probako bezero db jarraitzen du");
@@ -84,17 +88,21 @@ public class RegisterDAW {
 		int telZenb = 688812464;
 		String postaElek = "aritzazkunaga@gmail.com";
 		Bezero b = new Bezero(erabiltzailea, pasahitza, izena, abizena, nA, jaiotzeData, telZenb, postaElek);
+		Bezero proba = new Bezero("Erab2", "123", "Jon", "Jauregi", "12345678c", new Date(1997, 5, 3), 945677777,
+				"jon@gmail.com");
 		try {
 			int a = testDA.register(b);
 			if (a == 0) {
-				int emaitza = sut.register(new Bezero("Erab2", "123", "Jon", "Jauregi", "12345678c",
-						new Date(1997, 5, 3), 945677777, "jon@gmail.com"));
+				int emaitza = sut.register(proba);
 				assertEquals(emaitza, 0);
+				// Bezeroa erregistratu bat dela egiaztatu
+				assertTrue(proba.equals(sut.isLogin("Erab2", "123")));
 			} else {
 				fail("Aurreko probako bezero db jarraitzen du");
 			}
 		} finally {
 			testDA.removeBezero(b);
+			testDA.removeBezero(proba);
 		}
 
 	}

@@ -1,0 +1,888 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:24:18 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 15396@DESKTOP-JFS5NG3
+
+[2021-10-02 11:24:19 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:24:19 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:24:19 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:24:19 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:24:19 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:24:19 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:24:19 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:24:19 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:24:19 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:24:19 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:24:19 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:24:19 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:24:19 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:24:19 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:24:19 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:24:19 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:24:19 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:24:19 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:24:19 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:24:19 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:24:19 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:24:19 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:24:19 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:25:00 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 9036@DESKTOP-JFS5NG3
+
+[2021-10-02 11:25:00 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:25:00 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:25:01 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:25:01 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:25:01 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:25:01 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:25:01 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:25:01 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:25:01 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:25:01 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:25:01 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:25:01 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:25:01 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:25:01 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:25:01 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:25:01 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:25:01 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:25:01 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:25:01 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:25:01 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:25:01 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:25:01 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:25:01 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:36:12 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 9112@DESKTOP-JFS5NG3
+
+[2021-10-02 11:36:12 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:36:12 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:36:12 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:36:12 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:36:12 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:36:12 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:36:12 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:36:12 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:36:12 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:36:12 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:36:12 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:36:12 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:36:12 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:36:12 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:36:12 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:36:12 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:36:12 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:36:12 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:36:12 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:36:12 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:36:12 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:36:12 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:36:12 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:38:30 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 14360@DESKTOP-JFS5NG3
+
+[2021-10-02 11:38:30 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:38:30 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:38:31 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:38:31 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:38:31 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:38:31 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:38:31 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:38:31 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:38:31 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:38:31 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:38:31 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:38:31 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:38:31 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:38:31 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:38:31 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:38:31 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:38:31 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:38:31 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:38:31 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:38:31 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:38:31 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:38:31 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:38:31 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:38:40 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 13992@DESKTOP-JFS5NG3
+
+[2021-10-02 11:38:40 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:38:40 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:38:40 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:38:40 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:38:40 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:38:40 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:38:40 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:38:40 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:38:40 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:38:40 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:38:40 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:38:40 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:38:40 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:38:40 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:38:40 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:38:40 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:38:40 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:38:40 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:38:40 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:38:40 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:38:40 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:38:40 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:38:40 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:39:18 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 8908@DESKTOP-JFS5NG3
+
+[2021-10-02 11:39:18 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:39:18 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:39:19 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:39:19 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:39:19 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:39:19 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:39:19 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:39:19 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:39:19 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:39:19 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:39:19 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:39:19 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:39:19 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:39:19 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:39:19 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:39:19 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:39:19 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:39:19 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:39:19 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:39:19 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:39:19 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:39:19 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:39:19 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:39:36 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 11412@DESKTOP-JFS5NG3
+
+[2021-10-02 11:39:36 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:39:36 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:39:36 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:39:36 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:39:36 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:39:36 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:39:36 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:39:36 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:39:36 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:39:36 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:39:36 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:39:36 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:39:36 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:39:36 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:39:36 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:39:36 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:39:36 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:39:36 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:39:36 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:39:36 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:39:36 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:39:36 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:39:36 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:40:09 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 1896@DESKTOP-JFS5NG3
+
+[2021-10-02 11:40:09 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:40:09 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:40:09 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:40:09 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:40:09 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:40:09 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:40:09 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:40:09 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:40:09 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:40:09 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:40:09 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:40:09 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:40:09 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:40:09 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:40:09 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:40:09 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:40:09 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:40:09 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:40:09 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:40:09 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:40:09 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:40:09 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:40:09 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:41:59 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 12588@DESKTOP-JFS5NG3
+
+[2021-10-02 11:42:00 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:42:00 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:42:00 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:42:00 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:42:00 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:42:00 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:42:00 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:42:00 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:42:00 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:42:00 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:42:00 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:42:00 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:42:00 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:42:00 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:42:00 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:42:00 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:42:00 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:42:00 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:42:00 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:42:00 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:42:00 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:42:00 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:42:00 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:43:20 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 7844@DESKTOP-JFS5NG3
+
+[2021-10-02 11:43:20 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:43:20 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:43:20 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:43:20 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:43:20 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:43:20 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:43:20 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:43:20 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:43:20 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:43:20 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:43:20 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:43:20 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:43:20 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:43:20 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:43:20 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:43:20 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:43:20 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:43:21 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:43:21 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:43:21 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:43:21 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:43:21 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:43:21 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:45:02 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 2580@DESKTOP-JFS5NG3
+
+[2021-10-02 11:45:02 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:45:02 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:45:02 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:45:02 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:45:02 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:45:02 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:45:02 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:45:02 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:45:02 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:45:02 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:45:02 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:45:02 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:45:02 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:45:02 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:45:02 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:45:02 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:45:02 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:45:02 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:45:02 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:45:02 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:45:02 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:45:02 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:45:03 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-02 11:45:37 #1 store] 
+Database 'C:\Users\USU\git\SI2\Bets21\src\main\resources\bets.temp' is opened by 4516@DESKTOP-JFS5NG3
+
+[2021-10-02 11:45:38 #2 type.registry] 
+New type domain.Pertsona
+
+[2021-10-02 11:45:38 #3 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-02 11:45:38 #4 type.registry] 
+New type domain.Bezero
+
+[2021-10-02 11:45:38 #5 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-02 11:45:38 #6 type.registry] 
+New type domain.Kodea
+
+[2021-10-02 11:45:38 #7 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-10-02 11:45:38 #8 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-10-02 11:45:38 #9 type.registry] 
+New type domain.Apustua
+
+[2021-10-02 11:45:38 #10 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-10-02 11:45:38 #11 type.registry] 
+New type domain.Mugimendua
+
+[2021-10-02 11:45:38 #12 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-10-02 11:45:38 #13 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-02 11:45:38 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-02 11:45:38 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-10-02 11:45:38 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-10-02 11:45:38 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-02 11:45:38 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-02 11:45:38 #19 type.registry] 
+New type domain.Question
+
+[2021-10-02 11:45:38 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-02 11:45:38 #21 type.registry] 
+New type domain.Event
+
+[2021-10-02 11:45:38 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-02 11:45:38 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-10-02 11:45:38 #24 type.registry] 
+New type java.util.Vector<java.lang.Object>
+

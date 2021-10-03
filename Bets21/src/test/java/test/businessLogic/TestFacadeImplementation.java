@@ -1,12 +1,14 @@
 package test.businessLogic;
 
 import java.util.Date;
+import java.util.Vector;
 
 import javax.jws.WebMethod;
 
 import configuration.ConfigXML;
 import domain.Bezero;
 import domain.Event;
+import domain.Pronostikoa;
 import test.dataAccess.TestDataAccess;
 
 public class TestFacadeImplementation {
@@ -39,6 +41,18 @@ public class TestFacadeImplementation {
 		int n = dbManagerTest.register(p);
 		dbManagerTest.close();
 		return n;
+	}
+	
+	public void apustuaEgin(Vector<Pronostikoa> pronostikoak, float dirua, Bezero b, Bezero jabea, float kuota) {
+		dbManagerTest.open();
+		dbManagerTest.apustuaEgin(pronostikoak, dirua, b, jabea, kuota);
+		dbManagerTest.close();
+	}
+	
+	public void deleteEvent(Event evi) {
+		dbManagerTest.open();
+		dbManagerTest.deleteEvent(evi);
+		dbManagerTest.close();
 	}
 
 }

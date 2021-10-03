@@ -1,6 +1,7 @@
 package test.businessLogic;
 
 import java.util.Date;
+import java.util.ResourceBundle;
 import java.util.Vector;
 
 import javax.jws.WebMethod;
@@ -9,6 +10,9 @@ import configuration.ConfigXML;
 import domain.Bezero;
 import domain.Event;
 import domain.Pronostikoa;
+import domain.Question;
+import exceptions.EventFinished;
+import exceptions.QuestionAlreadyExist;
 import test.dataAccess.TestDataAccess;
 
 public class TestFacadeImplementation {
@@ -53,6 +57,44 @@ public class TestFacadeImplementation {
 		dbManagerTest.open();
 		dbManagerTest.deleteEvent(evi);
 		dbManagerTest.close();
+	}
+	
+	public void emaitzaIpini(Event ev, Question q, Pronostikoa pi) {
+		dbManagerTest.open();
+		dbManagerTest.emaitzaIpini(ev, q, pi);
+		dbManagerTest.close();
+
+	}
+	public int createEvent(String description, Date eventDate, String kirola, String txapelketa) {
+		dbManagerTest.open();
+		Event e = new Event(description, eventDate, kirola, txapelketa);
+		int n = dbManagerTest.createEvent(e);
+		dbManagerTest.close();
+		return n;
+	}
+	
+	public int createPronostikoa(String pronostikoa, float kuota, Question qi) {
+		dbManagerTest.open();
+		int n = dbManagerTest.createPronostikoa(pronostikoa, kuota, qi);
+		dbManagerTest.close();
+		return n;
+	}
+	
+	public Question createQuestion(Event event, String question, float betMinimum)
+			throws EventFinished, QuestionAlreadyExist {
+
+		// The minimum bed must be greater than 0
+		dbManagerTest.open();
+		Question qry = null;
+
+		if (new Date().compareTo(event.getEventDate()) > 0)
+			throw new EventFinished(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
+
+		qry = dbManagerTest.createQuestion(event, question, betMinimum);
+
+		dbManagerTest.close();
+
+		return qry;
 	}
 
 }

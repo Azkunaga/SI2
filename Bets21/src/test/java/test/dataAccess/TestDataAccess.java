@@ -19,6 +19,7 @@ import domain.Event;
 import domain.Pertsona;
 import domain.Pronostikoa;
 import domain.Question;
+import exceptions.QuestionAlreadyExist;
 
 public class TestDataAccess {
 	protected EntityManager db;
@@ -209,6 +210,85 @@ public class TestDataAccess {
 		db.getTransaction().begin();
 		db.remove(ev);
 		db.getTransaction().commit();
+	}
+	
+	public void emaitzaIpini(Event ev, Question q, Pronostikoa pi) {
+		boolean ordaindu = true;
+		Question qi = db.find(Question.class, q.getQuestionNumber());
+		Pronostikoa p = db.find(Pronostikoa.class, pi.getPronostikoaNumber());
+		qi.setResult(p);
+		db.getTransaction().begin();
+		db.persist(qi);
+		db.getTransaction().commit();
+		Vector<Apustua> ap = p.getApustuak();
+		for (Apustua api : ap) {
+			Bezero b = db.find(Bezero.class, api.getBezeroa().getErabiltzailea());
+			Float kuota = api.getKuota();
+			Float apustuDirua = api.getApustuDirua();
+			Vector<Pronostikoa> pronostikoak = api.getPronostikoak();
+			for (Pronostikoa pr : pronostikoak) {
+				Question qr = pr.getQ();
+				if (!pr.equals(qr.getResult())) {
+					ordaindu = false;
+				}
+			}
+			if (ordaindu) {
+				b.addDirua(kuota * apustuDirua);
+				b.addMugimendua(kuota * apustuDirua, ResourceBundle.getBundle("Etiquetas").getString("Win"), false);
+				db.getTransaction().begin();
+				db.persist(b);
+				db.getTransaction().commit();
+				Bezero jabea = api.getJabea();
+				if (jabea != null) {
+					Bezero aur = db.find(Bezero.class, jabea.getErabiltzailea());
+					aur.addDirua((float) (kuota * apustuDirua * 0.1));
+					aur.addMugimendua((float) (kuota * apustuDirua * 0.1),
+							ResourceBundle.getBundle("Etiquetas").getString("WinThanksTo") + b.getErabiltzailea(),
+							true);
+					db.getTransaction().begin();
+					db.persist(aur);
+					db.getTransaction().commit();
+				}
+
+			}
+		}
+
+	}
+	
+	public int createPronostikoa(String pronostikoa, float kuota, Question qi) {
+		Question q = db.find(Question.class, qi.getQuestionNumber());
+		if (q == null) {
+			return 0;
+		}
+		if (!q.doesPronostikoaExist(pronostikoa)) {
+			q.addPronostikoa(pronostikoa, kuota);
+			db.getTransaction().begin();
+			db.persist(q);
+			db.getTransaction().commit();
+			return 0;
+		} else {
+			return 1;
+		}
+	}
+	
+	public Question createQuestion(Event event, String question, float betMinimum) throws QuestionAlreadyExist {
+		System.out.println(">> DataAccess: createQuestion=> event= " + event + " question= " + question + " betMinimum="
+				+ betMinimum);
+
+		Event ev = db.find(Event.class, event.getEventNumber());
+
+		if (ev.doesQuestionExists(question))
+			throw new QuestionAlreadyExist(ResourceBundle.getBundle("Etiquetas").getString("ErrorQueryAlreadyExist"));
+
+		db.getTransaction().begin();
+		Question q = ev.addQuestion(question, betMinimum);
+		// db.persist(q);
+		db.persist(ev); // db.persist(q) not required when CascadeType.PERSIST is added in questions
+						// property of Event class
+						// @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+		db.getTransaction().commit();
+		return q;
+
 	}
 
 }

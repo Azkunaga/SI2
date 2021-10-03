@@ -30,11 +30,14 @@ public class EmaitzakIpiniDAW {
 		
 		Date data = new Date(2021,10,5);
 		Event e = new Event(1,"Lehen mailako liga",data,"Futbola","Laliga");
-		e.addQuestion("Zenbat gol?", (float) 2);
-		Pronostikoa p = new Pronostikoa("2 gol",(float) 0.3,e.getQuestions().firstElement());
+		Question q = e.addQuestion("Zenbat gol?", (float) 2);
+		Pronostikoa p = q.addPronostikoa("2 gol",(float) 0.3);
 		
 		try {
 			testDA.open();
+			testDA.createEvent(e);
+			testDA.close();
+			
 			sut.createPronostikoa("2 Gol",(float) 0.3,e.getQuestions().firstElement());
 			try {
 				sut.createQuestion(e, "Zenbat gol?", (float) 2);
@@ -48,7 +51,9 @@ public class EmaitzakIpiniDAW {
 		
 		
 		finally {
-			
+			testDA.open();
+			testDA.removeEvent(e);
+			testDA.close();
 		}
 	}
 	
@@ -58,8 +63,8 @@ public class EmaitzakIpiniDAW {
 		
 		Date data = new Date(2021,10,5);
 		Event e = new Event(1,"Lehen mailako liga",data,"Futbola","Laliga");
-		Question q = new Question(1,"Zenbat gol?",(float) 2,e);
-		Pronostikoa p = new Pronostikoa("2 Gol",(float) 0.3,q);
+		Question q = e.addQuestion("Zenbat gol?",(float) 2);
+		Pronostikoa p = q.addPronostikoa("2 Gol",(float) 0.3);
 		q.setResult(p);
 		Pronostikoa pEzIrabazi = new Pronostikoa("3 Gol",(float) 0.3,q);
 		Bezero b = new Bezero("Erab1", "123", "Jon", "Jauregi", "12345678c", new Date(1997, 5, 3),
@@ -82,7 +87,7 @@ public class EmaitzakIpiniDAW {
 			
 			sut.emaitzaIpini(e, q, p);
 			
-			assertEquals(b.getDirua(),7);
+			assertEquals(b.getDirua(),10,0.0f);
 		}
 		
 		
@@ -100,8 +105,8 @@ public class EmaitzakIpiniDAW {
 		
 		Date data = new Date(2021,10,5);
 		Event e = new Event(1,"Lehen mailako liga",data,"Futbola","Laliga");
-		Question q = new Question(1,"Zenbat gol?",(float) 2,e);
-		Pronostikoa p = new Pronostikoa("3 Gol",(float) 0.3,q);
+		Question q = e.addQuestion("Zenbat gol?",(float) 2);
+		Pronostikoa p = q.addPronostikoa("3 Gol",(float) 0.3);
 		q.setResult(p);
 		Pronostikoa pIrabazi = new Pronostikoa("3 Gol",(float) 0.3,q);
 		Bezero b = new Bezero("Erab1", "123", "Jon", "Jauregi", "12345678c", new Date(1997, 5, 3),
@@ -124,7 +129,7 @@ public class EmaitzakIpiniDAW {
 			b.addDirua(ap.getApustuDirua()*ap.getKuota());
 			sut.emaitzaIpini(e, q, p);
 			
-			assertEquals(b.getDirua(),97);
+			assertEquals(b.getDirua(),100,0.0f);
 		}
 		
 		
@@ -142,8 +147,8 @@ public class EmaitzakIpiniDAW {
 		
 		Date data = new Date(2021,10,5);
 		Event e = new Event(1,"Lehen mailako liga",data,"Futbola","Laliga");
-		Question q = new Question(1,"Zenbat gol?",(float) 2,e);
-		Pronostikoa p = new Pronostikoa("3 Gol",(float) 0.3,q);
+		Question q = e.addQuestion("Zenbat gol?",(float) 2);
+		Pronostikoa p = q.addPronostikoa("3 Gol",(float) 0.3);
 		q.setResult(p);
 		Pronostikoa pIrabazi = new Pronostikoa("3 Gol",(float) 0.3,q);
 		Bezero b = new Bezero("Erab1", "123", "Jon", "Jauregi", "12345678c", new Date(1997, 5, 3),
@@ -170,8 +175,8 @@ public class EmaitzakIpiniDAW {
 			b.addDirua((float)(ap.getApustuDirua()*ap.getKuota()*0.1));
 			sut.emaitzaIpini(e, q, p);
 			
-			assertEquals(b2.getDirua(),107);
-			assertEquals(b.getDirua(),19);
+			assertEquals(b2.getDirua(),110,0.0f);
+			assertEquals(b.getDirua(),19,0.0f);
 		}
 		
 		

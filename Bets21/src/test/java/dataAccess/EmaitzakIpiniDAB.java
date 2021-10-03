@@ -7,9 +7,7 @@ import org.junit.Test;
 
 public class EmaitzakIpiniDAB {
 
-	@Before
-	public void setUp() throws Exception {
-	}
+	
 
 	@Test
 	public void test() {

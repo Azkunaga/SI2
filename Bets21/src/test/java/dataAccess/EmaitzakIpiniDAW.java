@@ -35,7 +35,6 @@ public class EmaitzakIpiniDAW {
 		
 		try {
 			testDA.open();
-			sut.createEvent(e);
 			sut.createPronostikoa("2 Gol",(float) 0.3,q);
 			try {
 				sut.createQuestion(e, "Zenbat gol?", (float) 2);
@@ -67,7 +66,7 @@ public class EmaitzakIpiniDAW {
 				945677777, "jon@gmail.com");
 		b.setDirua(10);
 		Vector<Pronostikoa> pros = new Vector<Pronostikoa>();
-		pros.addElement(p);
+		pros.addElement(pEzIrabazi);
 		Apustua ap = new Apustua((float)3,pros,b,b,30);
 		try {
 			testDA.open();
@@ -83,7 +82,7 @@ public class EmaitzakIpiniDAW {
 			
 			sut.emaitzaIpini(e, q, p);
 			
-			assertEquals(b.getDirua(),10);
+			assertEquals(b.getDirua(),7);
 		}
 		
 		
@@ -109,7 +108,7 @@ public class EmaitzakIpiniDAW {
 				945677777, "jon@gmail.com");
 		b.setDirua(10);
 		Vector<Pronostikoa> pros = new Vector<Pronostikoa>();
-		pros.addElement(p);
+		pros.addElement(pIrabazi);
 		Apustua ap = new Apustua((float)3,pros,b,b,30);
 		try {
 			testDA.open();
@@ -122,10 +121,10 @@ public class EmaitzakIpiniDAW {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			
+			b.addDirua(ap.getApustuDirua()*ap.getKuota());
 			sut.emaitzaIpini(e, q, p);
 			
-			assertEquals(b.getDirua(),10);
+			assertEquals(b.getDirua(),97);
 		}
 		
 		

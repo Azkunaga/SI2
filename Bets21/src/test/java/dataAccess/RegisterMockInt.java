@@ -32,7 +32,7 @@ public class RegisterMockInt {
 	/*
 	 // null den Bezeroa sartzen da. AKATSA
 	@Test
-	public void test1() {
+	public void test1() {	
 		try {
 			int a = sut.register(null);
 			fail();

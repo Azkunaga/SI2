@@ -234,10 +234,52 @@ public class EmaitzakIpiniDAB {
 		}
 	}
 	
+	//Ez ordaindu
+		@Test
+		public void test8() {
+			
+			Date data = new Date(2021,10,5);
+			Event e = new Event(1,"Lehen mailako liga",data,"Futbola","Laliga");
+			Question q = e.addQuestion("Zenbat gol?",(float) 2);
+			Pronostikoa p = q.addPronostikoa("3 Gol",(float) 0.3);
+			q.setResult(p);
+			Pronostikoa pIrabazi = new Pronostikoa("2 Gol",(float) 0.3,q);
+			Bezero b = new Bezero("Erab1", "123", "Jon", "Jauregi", "12345678c", new Date(1997, 5, 3),
+					945677777, "jon@gmail.com");
+			b.setDirua(10);
+			Vector<Pronostikoa> pros = new Vector<Pronostikoa>();
+			pros.addElement(pIrabazi);
+			Apustua ap = new Apustua((float)3,pros,b,b,30);
+			try {
+				testDA.open();
+				int a = testDA.register(b);
+				sut.createEvent(e);
+				sut.createPronostikoa("Golak",(float) 0.3,q);
+				try {
+					sut.createQuestion(e, "Zenbat gol?", (float) 2);
+				} catch (QuestionAlreadyExist e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				sut.emaitzaIpini(e, q, p);
+				
+				assertEquals(b.getDirua(),10,0.0f);
+			}
+			
+			
+			finally {
+				testDA.open();
+				testDA.removeBezero(b);
+				testDA.removeEvent(e);
+				testDA.close();
+			}
+		}
+	
 	// Ordaindu eta ez jabea
 	
 	@Test
-	public void test8() {
+	public void test9() {
 		
 		Date data = new Date(2021,10,5);
 		Event e = new Event(1,"Lehen mailako liga",data,"Futbola","Laliga");

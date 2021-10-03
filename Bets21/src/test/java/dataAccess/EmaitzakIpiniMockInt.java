@@ -244,7 +244,44 @@ public class EmaitzakIpiniMockInt {
 		
 		assertEquals(b2.getDirua(),110,0.0f);
 		assertEquals(b.getDirua(),19,0.0f);
-	}			
+	}
+	
+	@Test
+	public void test9() {
+		
+		Date data = new Date(2021,10,5);
+		Event e = new Event(1,"Lehen mailako liga",data,"Futbola","Laliga");
+		sut.createEvent("Lehen mailako liga",data,"Futbola","Laliga");
+		Question q = new Question(1,"Zenbat gol?",(float) 2,e);
+		Pronostikoa p = new Pronostikoa("3 Gol",(float) 0.3,q);
+		q.setResult(p);
+		Pronostikoa pIrabazi = new Pronostikoa("2 Gol",(float) 0.3,q);
+		Bezero b = new Bezero("Erab1", "123", "Jon", "Jauregi", "12345678c", new Date(1997, 5, 3),
+				945677777, "jon@gmail.com");
+		b.setDirua(10);
+		Vector<Pronostikoa> pros = new Vector<Pronostikoa>();
+		pros.addElement(pIrabazi);
+		Apustua ap = new Apustua((float)3,pros,b,b,30);
+		
+		sut.createPronostikoa("Golak",(float) 0.3,q);
+		
+		try {
+			sut.createQuestion(e, "Zenbat gol?", (float) 2);
+		} catch (EventFinished e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (QuestionAlreadyExist e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	
+		sut.emaitzaIpini(e, q, p);
+		
+		
+		assertEquals((float)b.getDirua(),(float)10,0.0f);
+			
+		
+	}	
 	
 	
 

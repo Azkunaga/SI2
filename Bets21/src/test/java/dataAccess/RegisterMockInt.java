@@ -19,15 +19,17 @@ import businessLogic.BLFacadeImplementation;
 import domain.Bezero;
 import domain.Event;
 import domain.Pertsona;
+import test.businessLogic.TestFacadeImplementation;
+import test.dataAccess.TestDataAccess;
 
 @RunWith(MockitoJUnitRunner.class)
 public class RegisterMockInt {
 
 	@Mock
-	DataAccess dataAccess;
+	TestDataAccess dataAccess;
 
 	@InjectMocks
-	BLFacadeImplementation sut;
+	TestFacadeImplementation sut;
 
 	/*
 	 // null den Bezeroa sartzen da. AKATSA
@@ -52,7 +54,7 @@ public class RegisterMockInt {
 
 		assertEquals(1, emaitza);
 
-	}
+	}	
 
 	// Badago beste bezero bat NAN berdina duena
 	@Test

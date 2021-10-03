@@ -30,10 +30,10 @@ public class CreateQuestionMockInt {
      DataAccess dataAccess;
 	
 	@Mock
-     Event mockedEvent;
+    Event mockedEvent;
 	
 	@InjectMocks
-	 BLFacadeImplementation sut;
+	BLFacadeImplementation sut;
 	
 	//sut.createQuestion:  The event has one question with a queryText. 
 

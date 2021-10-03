@@ -30,12 +30,12 @@ public class EmaitzakIpiniDAW {
 		
 		Date data = new Date(2021,10,5);
 		Event e = new Event(1,"Lehen mailako liga",data,"Futbola","Laliga");
-		Question q = new Question(1,"Zenbat gol?",(float) 2,e);
-		Pronostikoa p = new Pronostikoa("2 gol",(float) 0.3,q);
+		e.addQuestion("Zenbat gol?", (float) 2);
+		Pronostikoa p = new Pronostikoa("2 gol",(float) 0.3,e.getQuestions().firstElement());
 		
 		try {
 			testDA.open();
-			sut.createPronostikoa("2 Gol",(float) 0.3,q);
+			sut.createPronostikoa("2 Gol",(float) 0.3,e.getQuestions().firstElement());
 			try {
 				sut.createQuestion(e, "Zenbat gol?", (float) 2);
 			} catch (QuestionAlreadyExist e1) {
@@ -43,7 +43,7 @@ public class EmaitzakIpiniDAW {
 				e1.printStackTrace();
 			}
 			
-			sut.emaitzaIpini(e, q, p);
+			sut.emaitzaIpini(e, e.getQuestions().firstElement(), p);
 		}
 		
 		
@@ -94,7 +94,7 @@ public class EmaitzakIpiniDAW {
 		}
 	}
 	
-	// Apustua ordaindu
+	// Apustua ordaindu eta jabea
 	@Test
 	public void test3() {
 		
@@ -125,6 +125,53 @@ public class EmaitzakIpiniDAW {
 			sut.emaitzaIpini(e, q, p);
 			
 			assertEquals(b.getDirua(),97);
+		}
+		
+		
+		finally {
+			testDA.open();
+			testDA.removeBezero(b);
+			testDA.removeEvent(e);
+			testDA.close();
+		}
+	}
+	
+	// ordaindu eta ez jabea
+	@Test
+	public void test4() {
+		
+		Date data = new Date(2021,10,5);
+		Event e = new Event(1,"Lehen mailako liga",data,"Futbola","Laliga");
+		Question q = new Question(1,"Zenbat gol?",(float) 2,e);
+		Pronostikoa p = new Pronostikoa("3 Gol",(float) 0.3,q);
+		q.setResult(p);
+		Pronostikoa pIrabazi = new Pronostikoa("3 Gol",(float) 0.3,q);
+		Bezero b = new Bezero("Erab1", "123", "Jon", "Jauregi", "12345678c", new Date(1997, 5, 3),
+				945677777, "jon@gmail.com");
+		b.setDirua(10);
+		Bezero b2 = new Bezero("Erab2", "123", "Aritz", "Azkunaga", "12345678c", new Date(1997, 5, 3),
+				945677777, "aritzn@gmail.com");
+		b2.setDirua(20);
+		Vector<Pronostikoa> pros = new Vector<Pronostikoa>();
+		pros.addElement(pIrabazi);
+		Apustua ap = new Apustua((float)3,pros,b2,b,30);
+		try {
+			testDA.open();
+			int a = testDA.register(b);
+			sut.createEvent(e);
+			sut.createPronostikoa("Golak",(float) 0.3,q);
+			try {
+				sut.createQuestion(e, "Zenbat gol?", (float) 2);
+			} catch (QuestionAlreadyExist e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			b2.addDirua(ap.getApustuDirua()*ap.getKuota());
+			b.addDirua((float)(ap.getApustuDirua()*ap.getKuota()*0.1));
+			sut.emaitzaIpini(e, q, p);
+			
+			assertEquals(b2.getDirua(),107);
+			assertEquals(b.getDirua(),19);
 		}
 		
 		

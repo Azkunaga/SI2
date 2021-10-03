@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
+import java.util.Vector;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,9 +13,11 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import configuration.ConfigXML;
+import domain.Apustua;
 import domain.Bezero;
 import domain.Event;
 import domain.Pertsona;
+import domain.Pronostikoa;
 import domain.Question;
 
 public class TestDataAccess {
@@ -123,6 +127,56 @@ public class TestDataAccess {
 			db.remove(bez);
 			db.getTransaction().commit();
 		}
+	}
+	
+	public int createEvent(Event e) {
+		TypedQuery<Event> query = db.createQuery("SELECT ev FROM Event ev WHERE ev.description=?1 AND ev.eventDate=?2",
+				Event.class);
+		query.setParameter(1, e.getDescription());
+		query.setParameter(2, e.getEventDate());
+		List<Event> l1 = query.getResultList();
+		if (!l1.isEmpty())
+			return 1; // gertaera hori existitzen da
+		else {
+			db.getTransaction().begin();
+			db.persist(e);
+			db.getTransaction().commit();
+			return 0;
+		}
+	}
+	
+	public boolean doesEventExist(Event e) {
+		Event e1 = db.find(Event.class, e.getEventNumber());
+		if(e1!=null) {
+			return true;
+		}
+		return false;
+	}
+	
+	public void apustuaEgin(Vector<Pronostikoa> pronostikoak, float dirua, Bezero b, Bezero jabea, float kuota) {
+		Pronostikoa pri;
+		Bezero bez = db.find(Bezero.class, b.getErabiltzailea());
+		Apustua a = bez.addApustua(dirua, pronostikoak, jabea, kuota);
+		bez.restDirua(dirua);
+		bez.addMugimendua(-(dirua), "Apustua egin", false);
+		for (Pronostikoa p : pronostikoak) {
+			pri = db.find(Pronostikoa.class, p.getPronostikoaNumber());
+			pri.addApustua(a);
+			db.getTransaction().begin();
+			db.persist(pri);
+			db.getTransaction().commit();
+		}
+		db.getTransaction().begin();
+		db.persist(bez);
+		db.getTransaction().commit();
+	}
+	
+	public Bezero getBezero(Bezero b) {
+		Bezero bez = db.find(Bezero.class, b.getErabiltzailea());
+		if(bez!=null) {
+			return bez;
+		}
+		return null;
 	}
 
 }

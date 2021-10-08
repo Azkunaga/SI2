@@ -11,7 +11,7 @@ import domain.Bezero;
 import domain.Pertsona;
 import test.dataAccess.TestDataAccess;
 
-public class RegisterDAW {
+public class RegisterDAWTest {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);

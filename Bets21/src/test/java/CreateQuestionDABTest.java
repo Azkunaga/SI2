@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -15,15 +16,14 @@ import domain.Question;
 import exceptions.EventFinished;
 import exceptions.QuestionAlreadyExist;
 import test.businessLogic.TestFacadeImplementation;
-import test.dataAccess.TestDataAccess;
 
-public class CreateQuestionDAB {
+public class CreateQuestionDABTest {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);
 
 	// additional operations needed to execute the test
-	static TestDataAccess testDA = new TestDataAccess();
+	static test.dataAccess.TestDataAccess testDA = new test.dataAccess.TestDataAccess();
 
 	private Event ev;
 

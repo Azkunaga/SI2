@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -17,7 +18,7 @@ import exceptions.QuestionAlreadyExist;
 import test.businessLogic.TestFacadeImplementation;
 import test.dataAccess.TestDataAccess;
 
-public class CreateQuestionDAW {
+public class CreateQuestionDAWTest {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);

@@ -16,7 +16,7 @@ import domain.Pronostikoa;
 import domain.Question;
 import test.dataAccess.TestDataAccess;
 
-public class DeleteEventDAB {
+public class DeleteEventDABTest {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);

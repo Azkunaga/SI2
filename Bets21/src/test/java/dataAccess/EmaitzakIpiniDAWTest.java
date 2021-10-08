@@ -16,7 +16,7 @@ import domain.Question;
 import exceptions.QuestionAlreadyExist;
 import test.dataAccess.TestDataAccess;
 
-public class EmaitzakIpiniDAW {
+public class EmaitzakIpiniDAWTest {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);

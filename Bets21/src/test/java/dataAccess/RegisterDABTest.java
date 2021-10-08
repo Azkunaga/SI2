@@ -9,7 +9,7 @@ import org.junit.Test;
 import domain.Bezero;
 import test.dataAccess.TestDataAccess;
 
-public class RegisterDAB {
+public class RegisterDABTest {
 
 	// sut:system under test
 	static DataAccess sut = new DataAccess(true);

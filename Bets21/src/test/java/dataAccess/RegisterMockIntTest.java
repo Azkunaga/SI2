@@ -23,7 +23,7 @@ import test.businessLogic.TestFacadeImplementation;
 import test.dataAccess.TestDataAccess;
 
 @RunWith(MockitoJUnitRunner.class)
-public class RegisterMockInt {
+public class RegisterMockIntTest {
 
 	@Mock
 	TestDataAccess dataAccess;

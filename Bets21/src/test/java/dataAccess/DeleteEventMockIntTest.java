@@ -27,7 +27,7 @@ import test.businessLogic.TestFacadeImplementation;
 import test.dataAccess.TestDataAccess;
 
 @RunWith(MockitoJUnitRunner.class)
-public class DeleteEventMockInt {
+public class DeleteEventMockIntTest {
 
 	@Mock
 	TestDataAccess dataAccess;

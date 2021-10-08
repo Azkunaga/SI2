@@ -24,7 +24,7 @@ import test.businessLogic.TestFacadeImplementation;
 import test.dataAccess.TestDataAccess;
 
 @RunWith(MockitoJUnitRunner.class)
-public class EmaitzakIpiniMockInt {
+public class EmaitzakIpiniMockIntTest {
 
 	@Mock
 	TestDataAccess dataAccess;

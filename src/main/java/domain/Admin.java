@@ -22,7 +22,4 @@ public class Admin extends Pertsona implements Serializable{
 	public Admin() {
 		super(); 
 	}
-
-
-
 }

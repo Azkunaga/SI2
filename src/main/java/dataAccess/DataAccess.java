@@ -556,38 +556,55 @@ public class DataAccess {
 		db.persist(qi);
 		db.getTransaction().commit();
 		Vector<Apustua> ap = p.getApustuak();
+		apustuakOrdaindu(ordaindu, ap);
+
+	}
+
+	private void apustuakOrdaindu(boolean ordaindu, Vector<Apustua> ap) {
 		for (Apustua api : ap) {
 			Bezero b = db.find(Bezero.class, api.getBezeroa().getErabiltzailea());
 			Float kuota = api.getKuota();
 			Float apustuDirua = api.getApustuDirua();
 			Vector<Pronostikoa> pronostikoak = api.getPronostikoak();
-			for (Pronostikoa pr : pronostikoak) {
-				Question qr = pr.getQ();
-				if (!pr.equals(qr.getResult())) {
-					ordaindu = false;
-				}
-			}
-			if (ordaindu) {
-				b.addDirua(kuota * apustuDirua);
-				b.addMugimendua(kuota * apustuDirua, ResourceBundle.getBundle("Etiquetas").getString("Win"), false);
-				db.getTransaction().begin();
-				db.persist(b);
-				db.getTransaction().commit();
-				Bezero jabea = api.getJabea();
-				if (jabea != null) {
-					Bezero aur = db.find(Bezero.class, jabea.getErabiltzailea());
-					aur.addDirua((float) (kuota * apustuDirua * 0.1));
-					aur.addMugimendua((float) (kuota * apustuDirua * 0.1),
-							ResourceBundle.getBundle("Etiquetas").getString("WinThanksTo") + b.getErabiltzailea(),
-							true);
-					db.getTransaction().begin();
-					db.persist(aur);
-					db.getTransaction().commit();
-				}
+			ordaindu = pronostikoakKonparatu(ordaindu, pronostikoak);
+			ordaindu(ordaindu, api, b, kuota, apustuDirua);
+		}
+	}
 
+	private void ordaindu(boolean ordaindu, Apustua api, Bezero b, Float kuota, Float apustuDirua) {
+		if (ordaindu) {
+			b.addDirua(kuota * apustuDirua);
+			b.addMugimendua(kuota * apustuDirua, ResourceBundle.getBundle("Etiquetas").getString("Win"), false);
+			db.getTransaction().begin();
+			db.persist(b);
+			db.getTransaction().commit();
+			Bezero jabea = api.getJabea();
+			jabeaDa(b, kuota, apustuDirua, jabea);
+
+		}
+	}
+
+	private void jabeaDa(Bezero b, Float kuota, Float apustuDirua, Bezero jabea) {
+		if (jabea != null) {
+			Bezero aur = db.find(Bezero.class, jabea.getErabiltzailea());
+			aur.addDirua((float) (kuota * apustuDirua * 0.1));
+			aur.addMugimendua((float) (kuota * apustuDirua * 0.1),
+					ResourceBundle.getBundle("Etiquetas").getString("WinThanksTo") + b.getErabiltzailea(),
+					true);
+			db.getTransaction().begin();
+			db.persist(aur);
+			db.getTransaction().commit();
+		}
+	}
+	
+	private boolean pronostikoakKonparatu(boolean ordaindu, Vector<Pronostikoa> pronostikoak) {
+		for (Pronostikoa pr : pronostikoak) {
+			Question qr = pr.getQ();
+			if (!pr.equals(qr.getResult())) {
+				ordaindu = false;
 			}
 		}
-
+		return ordaindu;
 	}
 
 	public Vector<Mugimendua> getMugimenduak(Bezero b, Date data) {

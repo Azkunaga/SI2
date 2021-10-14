@@ -517,33 +517,37 @@ public class DataAccess {
 
 	public void deleteEvent(Event evi) {
 		Event ev = db.find(Event.class, evi.getEventNumber());
-		Bezero b;
-		Bezero bez;
 		Vector<Question> questions;
 		Vector<Pronostikoa> pronostikoak;
 		Vector<Apustua> apustuak;
-		float dirua;
 		questions = ev.getQuestions();
 		for (Question qi : questions) {
 			pronostikoak = qi.getPronostikoak();
 			for (Pronostikoa pi : pronostikoak) {
 				apustuak = pi.getApustuak();
 				for (Apustua ai : apustuak) {
-					dirua = ai.getApustuDirua();
-					b = ai.getBezeroa();
-					bez = db.find(Bezero.class, b.getErabiltzailea());
-					bez.addDirua(dirua);
-					bez.addMugimendua(dirua, ResourceBundle.getBundle("Etiquetas").getString("EventDeleted") + ": "
-							+ ev.getDescription(), false);
-					bez.removeApustua(ai);
-					db.getTransaction().begin();
-					db.persist(bez);
-					db.getTransaction().commit();
+					diruaItzuli(ev, ai);
 				}
 			}
 		}
 		db.getTransaction().begin();
 		db.remove(ev);
+		db.getTransaction().commit();
+	}
+
+	private void diruaItzuli(Event ev, Apustua ai) {
+		Bezero b;
+		Bezero bez;
+		float dirua;
+		dirua = ai.getApustuDirua();
+		b = ai.getBezeroa();
+		bez = db.find(Bezero.class, b.getErabiltzailea());
+		bez.addDirua(dirua);
+		bez.addMugimendua(dirua, ResourceBundle.getBundle("Etiquetas").getString("EventDeleted") + ": "
+				+ ev.getDescription(), false);
+		bez.removeApustua(ai);
+		db.getTransaction().begin();
+		db.persist(bez);
 		db.getTransaction().commit();
 	}
 

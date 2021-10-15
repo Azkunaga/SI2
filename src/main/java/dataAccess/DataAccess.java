@@ -32,6 +32,7 @@ import exceptions.QuestionAlreadyExist;
  * It implements the data access to the objectDb database
  */
 public class DataAccess {
+	private static final ResourceBundle etiketa = ResourceBundle.getBundle("Etiquetas");
 	static final String APUSTUA = "Apustua";
 	protected static EntityManager db;
 	protected static EntityManagerFactory emf;
@@ -101,34 +102,34 @@ public class DataAccess {
 			Langilea l = new Langilea("Langilea", "Langilea");
 			Bezero b1 = new Bezero("Bezero1", "Bezero1", "W", "E", "111", UtilDate.newDate(2000, 1, 1), 2, "w@m");
 			b1.addDirua(30);
-			b1.addMugimendua(30, ResourceBundle.getBundle("Etiquetas").getString("DiruaSartu"), true);
+			b1.addMugimendua(30, etiketa.getString("DiruaSartu"), true);
 			b1.restDirua(5);
-			b1.addMugimendua(-5, ResourceBundle.getBundle("Etiquetas").getString(APUSTUA), false);
+			b1.addMugimendua(-5, etiketa.getString(APUSTUA), false);
 			b1.addDirua(7);
-			b1.addMugimendua(7, ResourceBundle.getBundle("Etiquetas").getString("Win"), false);
+			b1.addMugimendua(7, etiketa.getString("Win"), false);
 			b1.restDirua(3);
-			b1.addMugimendua(-3, ResourceBundle.getBundle("Etiquetas").getString(APUSTUA), false);
+			b1.addMugimendua(-3, etiketa.getString(APUSTUA), false);
 			b1.addDirua(10);
-			b1.addMugimendua(10, ResourceBundle.getBundle("Etiquetas").getString("Win"), false);
+			b1.addMugimendua(10, etiketa.getString("Win"), false);
 			Bezero b2 = new Bezero("Bezero2", "Bezero2", "W", "E", "111", UtilDate.newDate(2000, 1, 1), 2, "w@m");
 			Bezero b3 = new Bezero("Bezero3", "Bezero3", "W", "E", "111", UtilDate.newDate(2000, 1, 1), 2, "w@m");
 			b3.setKopiatu(true);
 			b3.addDirua(5);
-			b3.addMugimendua(5, ResourceBundle.getBundle("Etiquetas").getString("DiruaSartu"), true);
+			b3.addMugimendua(5, etiketa.getString("DiruaSartu"), true);
 			b3.restDirua(3);
-			b3.addMugimendua(-3, ResourceBundle.getBundle("Etiquetas").getString(APUSTUA), false);
+			b3.addMugimendua(-3, etiketa.getString(APUSTUA), false);
 			Bezero b4 = new Bezero("Bezero4", "Bezero4", "W", "E", "111", UtilDate.newDate(2000, 1, 1), 2, "w@m");
 			Bezero b5 = new Bezero("Bezero5", "Bezero5", "W", "E", "111", UtilDate.newDate(2000, 1, 1), 2, "w@m");
 			Bezero b6 = new Bezero("Bezero6", "Bezero6", "W", "E", "111", UtilDate.newDate(2000, 1, 1), 2, "w@m");
 			b6.setKopiatu(true);
 			b6.addDirua(30);
-			b6.addMugimendua(30, ResourceBundle.getBundle("Etiquetas").getString("DiruaSartu"), true);
+			b6.addMugimendua(30, etiketa.getString("DiruaSartu"), true);
 			b6.restDirua(10);
-			b6.addMugimendua(-10, ResourceBundle.getBundle("Etiquetas").getString(APUSTUA), false);
+			b6.addMugimendua(-10, etiketa.getString(APUSTUA), false);
 			b6.addDirua(20);
-			b6.addMugimendua(20, ResourceBundle.getBundle("Etiquetas").getString("Win"), false);
+			b6.addMugimendua(20, etiketa.getString("Win"), false);
 			b6.restDirua(7);
-			b6.addMugimendua(-7, ResourceBundle.getBundle("Etiquetas").getString(APUSTUA), false);
+			b6.addMugimendua(-7, etiketa.getString(APUSTUA), false);
 
 			Question q1;
 			Question q2;
@@ -175,9 +176,9 @@ public class DataAccess {
 			Pronostikoa p8 = q2.addPronostikoa(taldea, 2);
 
 			b1.addDirua(10);
-			b1.addMugimendua(10, ResourceBundle.getBundle("Etiquetas").getString("DiruaSartu"), true);
+			b1.addMugimendua(10, etiketa.getString("DiruaSartu"), true);
 			b2.addDirua(10);
-			b2.addMugimendua(10, ResourceBundle.getBundle("Etiquetas").getString("DiruaSartu"), true);
+			b2.addMugimendua(10, etiketa.getString("DiruaSartu"), true);
 
 			Kodea k1 = b1.addUnekoKodea();
 			k1.setUsed(true);
@@ -289,7 +290,7 @@ public class DataAccess {
 		Event ev = db.find(Event.class, event.getEventNumber());
 
 		if (ev.doesQuestionExists(question))
-			throw new QuestionAlreadyExist(ResourceBundle.getBundle("Etiquetas").getString("ErrorQueryAlreadyExist"));
+			throw new QuestionAlreadyExist(etiketa.getString("ErrorQueryAlreadyExist"));
 
 		db.getTransaction().begin();
 		Question q = ev.addQuestion(question, betMinimum);
@@ -491,7 +492,7 @@ public class DataAccess {
 	public void diruaSartu(float dirua, Bezero b) {
 		Bezero bez = db.find(Bezero.class, b.getErabiltzailea());
 		bez.addDirua(dirua);
-		bez.addMugimendua(dirua, ResourceBundle.getBundle("Etiquetas").getString("DiruaSartu"), true);
+		bez.addMugimendua(dirua, etiketa.getString("DiruaSartu"), true);
 		db.getTransaction().begin();
 		db.persist(bez);
 		db.getTransaction().commit();
@@ -503,7 +504,7 @@ public class DataAccess {
 		Bezero bez = db.find(Bezero.class, b.getErabiltzailea());
 		Apustua a = bez.addApustua(dirua, pronostikoak, jabea, kuota);
 		bez.restDirua(dirua);
-		bez.addMugimendua(-(dirua), ResourceBundle.getBundle("Etiquetas").getString(APUSTUA), false);
+		bez.addMugimendua(-(dirua), etiketa.getString(APUSTUA), false);
 		for (Pronostikoa p : pronostikoak) {
 			pri = db.find(Pronostikoa.class, p.getPronostikoaNumber());
 			pri.addApustua(a);
@@ -544,7 +545,7 @@ public class DataAccess {
 		b = ai.getBezeroa();
 		bez = db.find(Bezero.class, b.getErabiltzailea());
 		bez.addDirua(dirua);
-		bez.addMugimendua(dirua, ResourceBundle.getBundle("Etiquetas").getString("EventDeleted") + ": "
+		bez.addMugimendua(dirua, etiketa.getString("EventDeleted") + ": "
 				+ ev.getDescription(), false);
 		bez.removeApustua(ai);
 		db.getTransaction().begin();
@@ -579,7 +580,7 @@ public class DataAccess {
 	private void ordaindu(boolean ordaindu, Apustua api, Bezero b, Float kuota, Float apustuDirua) {
 		if (ordaindu) {
 			b.addDirua(kuota * apustuDirua);
-			b.addMugimendua(kuota * apustuDirua, ResourceBundle.getBundle("Etiquetas").getString("Win"), false);
+			b.addMugimendua(kuota * apustuDirua, etiketa.getString("Win"), false);
 			db.getTransaction().begin();
 			db.persist(b);
 			db.getTransaction().commit();
@@ -593,9 +594,7 @@ public class DataAccess {
 		if (jabea != null) {
 			Bezero aur = db.find(Bezero.class, jabea.getErabiltzailea());
 			aur.addDirua((float) (kuota * apustuDirua * 0.1));
-			aur.addMugimendua((float) (kuota * apustuDirua * 0.1),
-					ResourceBundle.getBundle("Etiquetas").getString("WinThanksTo") + b.getErabiltzailea(),
-					true);
+			aur.addMugimendua((float) (kuota * apustuDirua * 0.1),etiketa.getString("WinThanksTo") + b.getErabiltzailea(),true);
 			db.getTransaction().begin();
 			db.persist(aur);
 			db.getTransaction().commit();
@@ -714,14 +713,14 @@ public class DataAccess {
 		Bezero s = db.find(Bezero.class, kod.getBezeroa().getErabiltzailea());
 		e.addDirua(5);
 		s.addDirua(5);
-		e.addMugimendua(5, ResourceBundle.getBundle("Etiquetas").getString("KodeaErabili"), true);
-		s.addMugimendua(5, ResourceBundle.getBundle("Etiquetas").getString("KodeaErabili"), true);
+		e.addMugimendua(5, etiketa.getString("KodeaErabili"), true);
+		s.addMugimendua(5, etiketa.getString("KodeaErabili"), true);
 		kod.setUsed(true);
 		s.addAurrekoKodea(kod);
 		s.setUnekoKodea(null);
 		if (s.erabilitakoKodeKop() % 10 == 0) {
 			s.addDirua(10);
-			s.addMugimendua(10, ResourceBundle.getBundle("Etiquetas").getString("UseTenCodes"), true);
+			s.addMugimendua(10, etiketa.getString("UseTenCodes"), true);
 		}
 		db.getTransaction().begin();
 		db.persist(kod);

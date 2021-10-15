@@ -1,0 +1,38 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-10-14 19:35:51 #1 store] 
+Database 'C:\Users\USU\git\SI2\src\main\resources\bets.temp' has been recovered (tr. 1-93)
+
+[2021-10-14 19:35:51 #2 store] 
+Database 'C:\Users\USU\git\SI2\src\main\resources\bets.temp' is opened by 1572@DESKTOP-JFS5NG3
+
+[2021-10-14 19:35:51 #3 type] 
+Type domain.Event is not enhanced.
+
+[2021-10-14 19:35:51 #4 type] 
+Type domain.Question is not enhanced.
+
+[2021-10-14 19:35:51 #5 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-10-14 19:35:51 #6 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-10-14 19:35:51 #7 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-10-14 19:35:51 #8 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-10-14 19:35:51 #9 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-10-14 19:35:51 #10 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-10-14 19:35:51 #11 type] 
+Type domain.Admin is not enhanced.
+
+[2021-10-14 19:35:51 #12 type] 
+Type domain.Langilea is not enhanced.
+

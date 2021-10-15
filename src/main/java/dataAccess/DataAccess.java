@@ -545,8 +545,7 @@ public class DataAccess {
 		b = ai.getBezeroa();
 		bez = db.find(Bezero.class, b.getErabiltzailea());
 		bez.addDirua(dirua);
-		bez.addMugimendua(dirua, etiketa.getString("EventDeleted") + ": "
-				+ ev.getDescription(), false);
+		bez.addMugimendua(dirua, etiketa.getString("EventDeleted") + ": " + ev.getDescription(), false);
 		bez.removeApustua(ai);
 		db.getTransaction().begin();
 		db.persist(bez);
@@ -566,6 +565,33 @@ public class DataAccess {
 
 	}
 
+	public class KuotaDirua {
+		public Float kuota;
+		public Float apustuDiru;
+
+		public KuotaDirua(Float kuota, Float apustuDirua) {
+			this.kuota=kuota;
+			this.apustuDiru=apustuDiru;
+		}
+
+		public Float getKuota() {
+			return kuota;
+		}
+
+		public void setKuota(Float kuota) {
+			this.kuota = kuota;
+		}
+
+		public Float getApustuDiru() {
+			return apustuDiru;
+		}
+
+		public void setApustuDiru(Float apustuDiru) {
+			this.apustuDiru = apustuDiru;
+		}
+
+	}
+
 	private void apustuakOrdaindu(boolean ordaindu, Vector<Apustua> ap) {
 		for (Apustua api : ap) {
 			Bezero b = db.find(Bezero.class, api.getBezeroa().getErabiltzailea());
@@ -573,12 +599,14 @@ public class DataAccess {
 			Float apustuDirua = api.getApustuDirua();
 			Vector<Pronostikoa> pronostikoak = api.getPronostikoak();
 			ordaindu = pronostikoakKonparatu(ordaindu, pronostikoak);
-			ordaindu(ordaindu, api, b, kuota, apustuDirua);
+			ordaindu(ordaindu, api, b, new KuotaDirua(kuota, apustuDirua));
 		}
 	}
 
-	private void ordaindu(boolean ordaindu, Apustua api, Bezero b, Float kuota, Float apustuDirua) {
+	private void ordaindu(boolean ordaindu, Apustua api, Bezero b, KuotaDirua dirua) {
 		if (ordaindu) {
+			float kuota=dirua.getKuota();
+			float apustuDirua= dirua.getApustuDiru();
 			b.addDirua(kuota * apustuDirua);
 			b.addMugimendua(kuota * apustuDirua, etiketa.getString("Win"), false);
 			db.getTransaction().begin();
@@ -594,13 +622,14 @@ public class DataAccess {
 		if (jabea != null) {
 			Bezero aur = db.find(Bezero.class, jabea.getErabiltzailea());
 			aur.addDirua((float) (kuota * apustuDirua * 0.1));
-			aur.addMugimendua((float) (kuota * apustuDirua * 0.1),etiketa.getString("WinThanksTo") + b.getErabiltzailea(),true);
+			aur.addMugimendua((float) (kuota * apustuDirua * 0.1),
+					etiketa.getString("WinThanksTo") + b.getErabiltzailea(), true);
 			db.getTransaction().begin();
 			db.persist(aur);
 			db.getTransaction().commit();
 		}
 	}
-	
+
 	private boolean pronostikoakKonparatu(boolean ordaindu, Vector<Pronostikoa> pronostikoak) {
 		for (Pronostikoa pr : pronostikoak) {
 			Question qr = pr.getQ();

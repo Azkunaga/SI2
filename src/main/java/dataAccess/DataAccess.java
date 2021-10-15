@@ -167,11 +167,12 @@ public class DataAccess {
 			}
 			Question q7 = ev111.addQuestion("Zeinek irabaziko du partidua?", 1);
 			p3 = q7.addPronostikoa("Atletico", 2);
-			p4 = q7.addPronostikoa("Athletic", 4);
+			String taldea = "Athletic";
+			p4 = q7.addPronostikoa(taldea, 4);
 			Pronostikoa p5 = q1.addPronostikoa("Atletico", (float) 1.2);
-			Pronostikoa p6 = q1.addPronostikoa("Athletic", 2);
+			Pronostikoa p6 = q1.addPronostikoa(taldea, 2);
 			Pronostikoa p7 = q2.addPronostikoa("Atletico", (float) 1.5);
-			Pronostikoa p8 = q2.addPronostikoa("Athletic", 2);
+			Pronostikoa p8 = q2.addPronostikoa(taldea, 2);
 
 			b1.addDirua(10);
 			b1.addMugimendua(10, ResourceBundle.getBundle("Etiquetas").getString("DiruaSartu"), true);

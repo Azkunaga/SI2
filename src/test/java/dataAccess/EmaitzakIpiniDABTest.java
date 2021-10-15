@@ -152,7 +152,9 @@ public class EmaitzakIpiniDABTest {
 			assertTrue(true);
 		}
 		finally {
-			
+			testDA.open();
+			testDA.removeEvent(ev);
+			testDA.close();
 		}
 		
 	}

@@ -1,7 +1,7 @@
 package gui;
 
 import businessLogic.BLFacade;
-
+import dataAccess.DataAccess.KuotaDirua;
 import domain.Bezero;
 import domain.Pronostikoa;
 import javax.swing.*;
@@ -149,14 +149,14 @@ public class ApustuaConfirmGUI extends JFrame {
 						pronostikoak.add(pi);
 					}
 		
-					facade.apustuaEgin(pronostikoak, Float.parseFloat(textAmount.getText()), b, null, kuota);
+					facade.apustuaEgin(pronostikoak, b, null, new KuotaDirua(Float.parseFloat(textAmount.getText()),kuota));
 
 					if(facade.getKopiatu(b)) {
 						Vector<Bezero> kopiatzaileak = facade.getKopiatzaileak(b);
 						for (Bezero a : kopiatzaileak) {
 							float por = (float) a.getPortzentaia();
 							if (!(a.getDirua() < Float.parseFloat(textAmount.getText())*por || Float.parseFloat(textAmount.getText())*por< minBet)) {
-								facade.apustuaEgin(pronostikoak, Float.parseFloat(textAmount.getText()) * por, a, b, kuota);
+								facade.apustuaEgin(pronostikoak, a, b, new KuotaDirua(Float.parseFloat(textAmount.getText()) * por, kuota));
 							}
 						}
 						

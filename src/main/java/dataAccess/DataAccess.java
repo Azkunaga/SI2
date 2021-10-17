@@ -167,13 +167,14 @@ public class DataAccess {
 
 			}
 			Question q7 = ev111.addQuestion("Zeinek irabaziko du partidua?", 1);
-			p3 = q7.addPronostikoa("Atletico", 2);
-			String taldea = "Athletic";
-			p4 = q7.addPronostikoa(taldea, 4);
-			Pronostikoa p5 = q1.addPronostikoa("Atletico", (float) 1.2);
-			Pronostikoa p6 = q1.addPronostikoa(taldea, 2);
-			Pronostikoa p7 = q2.addPronostikoa("Atletico", (float) 1.5);
-			Pronostikoa p8 = q2.addPronostikoa(taldea, 2);
+			String taldea1 = "Athletic";
+			String taldea2 = "Atletico";
+			p3 = q7.addPronostikoa(taldea2, 2);
+			p4 = q7.addPronostikoa(taldea1, 4);
+			Pronostikoa p5 = q1.addPronostikoa(taldea2, (float) 1.2);
+			Pronostikoa p6 = q1.addPronostikoa(taldea1, 2);
+			Pronostikoa p7 = q2.addPronostikoa(taldea2, (float) 1.5);
+			Pronostikoa p8 = q2.addPronostikoa(taldea1, 2);
 
 			b1.addDirua(10);
 			b1.addMugimendua(10, etiketa.getString("DiruaSartu"), true);
@@ -499,12 +500,12 @@ public class DataAccess {
 
 	}
 
-	public void apustuaEgin(Vector<Pronostikoa> pronostikoak, float dirua, Bezero b, Bezero jabea, float kuota) {
+	public void apustuaEgin(Vector<Pronostikoa> pronostikoak, Bezero b, Bezero jabea, KuotaDirua kuota) {
 		Pronostikoa pri;
 		Bezero bez = db.find(Bezero.class, b.getErabiltzailea());
-		Apustua a = bez.addApustua(dirua, pronostikoak, jabea, kuota);
-		bez.restDirua(dirua);
-		bez.addMugimendua(-(dirua), etiketa.getString(APUSTUA), false);
+		Apustua a = bez.addApustua(kuota.getApustuDiru(), pronostikoak, jabea, kuota.getKuota());
+		bez.restDirua(kuota.getApustuDiru());
+		bez.addMugimendua(-(kuota.getApustuDiru()), etiketa.getString(APUSTUA), false);
 		for (Pronostikoa p : pronostikoak) {
 			pri = db.find(Pronostikoa.class, p.getPronostikoaNumber());
 			pri.addApustua(a);
@@ -565,7 +566,7 @@ public class DataAccess {
 
 	}
 
-	public class KuotaDirua {
+	public static class KuotaDirua {
 		public Float kuota;
 		public Float apustuDiru;
 

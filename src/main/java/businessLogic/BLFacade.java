@@ -19,6 +19,8 @@ import exceptions.QuestionAlreadyExist;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+import dataAccess.DataAccess.KuotaDirua;
+
 /**
  * Interface that specifies the business logic.
  */
@@ -126,7 +128,7 @@ public interface BLFacade {
 	public void deleteEvent(Event evi);
 
 	@WebMethod
-	public void apustuaEgin(Vector<Pronostikoa> pronostikoak, float dirua, Bezero b, Bezero jabea, float kuota);
+	public void apustuaEgin(Vector<Pronostikoa> pronostikoak, Bezero b, Bezero jabea, KuotaDirua kuota);
 
 	@WebMethod
 	public void emaitzaIpini(Event ev, Question q, Pronostikoa pi);

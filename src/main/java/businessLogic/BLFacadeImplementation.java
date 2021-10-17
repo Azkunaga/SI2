@@ -17,6 +17,7 @@ import javax.jws.WebService;
 
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
+import dataAccess.DataAccess.KuotaDirua;
 import domain.Question;
 import domain.Bezero;
 import domain.Event;
@@ -353,9 +354,9 @@ public class BLFacadeImplementation implements BLFacade {
 	}
 
 	@WebMethod
-	public void apustuaEgin(Vector<Pronostikoa> pronostikoak, float dirua, Bezero b, Bezero jabea, float kuota) {
+	public void apustuaEgin(Vector<Pronostikoa> pronostikoak, Bezero b, Bezero jabea, KuotaDirua kuota) {
 		dbManager.open(false);
-		dbManager.apustuaEgin(pronostikoak, dirua, b, jabea, kuota);
+		dbManager.apustuaEgin(pronostikoak, b, jabea, kuota);
 		dbManager.close();
 	}
 

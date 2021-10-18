@@ -30,7 +30,7 @@ public class CreateQuestionIntTest {
 		
 		// you can parametrize the DataAccess used by BLFacadeImplementation
 		//DataAccess da= new DataAccess(ConfigXML.getInstance().getDataBaseOpenMode().equals("initialize"));
-		DataAccess da= new DataAccess(false);
+		DataAccess da= new DataAccess(true);
 
 		sut=new BLFacadeImplementation(da);
 		

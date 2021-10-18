@@ -219,7 +219,7 @@ public class EmaitzakIpiniDABTest {
 			sut.createEvent(e);
 			sut.createPronostikoa("Golak",(float) 0.3,q);
 			try {
-				sut.createQuestion(e, "Zenbat gol?", (float) 2);
+				sut.createQuestion(e, "Golegilea?", (float) 2);
 			} catch (QuestionAlreadyExist e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -261,7 +261,7 @@ public class EmaitzakIpiniDABTest {
 				sut.createEvent(e);
 				sut.createPronostikoa("Golak",(float) 0.3,q);
 				try {
-					sut.createQuestion(e, "Zenbat gol?", (float) 2);
+					sut.createQuestion(e, "Golegilea?", (float) 2);
 				} catch (QuestionAlreadyExist e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -307,7 +307,7 @@ public class EmaitzakIpiniDABTest {
 			sut.createEvent(e);
 			sut.createPronostikoa("Golak",(float) 0.3,q);
 			try {
-				sut.createQuestion(e, "Zenbat gol?", (float) 2);
+				sut.createQuestion(e, "Golegilea?", (float) 2);
 			} catch (QuestionAlreadyExist e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

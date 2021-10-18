@@ -43,7 +43,7 @@ public class EmaitzakIpiniDAWTest {
 			
 			sut.createPronostikoa("2 Gol",(float) 0.3,e.getQuestions().firstElement());
 			try {
-				sut.createQuestion(e, "Zenbat gol?", (float) 2);
+				sut.createQuestion(e, "Golegilea?", (float) 2);
 			} catch (QuestionAlreadyExist e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -82,7 +82,7 @@ public class EmaitzakIpiniDAWTest {
 			sut.createEvent(e);
 			sut.createPronostikoa("2 Gol",(float) 0.3,q);
 			try {
-				sut.createQuestion(e, "Zenbat gol?", (float) 2);
+				sut.createQuestion(e, "Golegilea?", (float) 2);
 			} catch (QuestionAlreadyExist e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -121,10 +121,10 @@ public class EmaitzakIpiniDAWTest {
 		try {
 			testDA.open();
 			int a = testDA.register(b);
-			sut.createEvent(e);
-			sut.createPronostikoa("Golak",(float) 0.3,q);
+			testDA.createEvent(e);
+			testDA.createPronostikoa("Golak",(float) 0.3,q);
 			try {
-				sut.createQuestion(e, "Zenbat gol?", (float) 2);
+				testDA.createQuestion(e, "Golegilea?", (float) 2);
 			} catch (QuestionAlreadyExist e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -166,10 +166,11 @@ public class EmaitzakIpiniDAWTest {
 		try {
 			testDA.open();
 			int a = testDA.register(b);
-			sut.createEvent(e);
-			sut.createPronostikoa("Golak",(float) 0.3,q);
+			testDA.createEvent(e);
+			testDA.createPronostikoa("Golak",(float) 0.3,q);
 			try {
-				sut.createQuestion(e, "Zenbat gol?", (float) 2);
+				testDA.createQuestion(e, "Golegilea?", (float) 2);
+				testDA.close();
 			} catch (QuestionAlreadyExist e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

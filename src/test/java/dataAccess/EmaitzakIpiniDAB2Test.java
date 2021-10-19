@@ -27,7 +27,7 @@ public class EmaitzakIpiniDAB2Test {
 	// additional operations needed to execute the test
 	static TestDataAccess testDA = new TestDataAccess();
 
-	// event null denean
+	//event null denean
 	@Test
 	public void test1() {
 		try {

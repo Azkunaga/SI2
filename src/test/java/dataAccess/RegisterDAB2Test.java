@@ -98,7 +98,7 @@ public class RegisterDAB2Test {
 //
 //	}
 
-	//Dena ondo joan bada
+	// Dena ondo joan bada
 	@Test
 	public void test4() {
 		String erabiltzailea = "Erab1";

@@ -290,5 +290,17 @@ public class TestDataAccess {
 		return q;
 
 	}
+	
+	public Pertsona isLogin(String erabiltzailea, String pasahitza) {
+		TypedQuery<Pertsona> query = db
+				.createQuery("SELECT p FROM Pertsona p WHERE p.erabiltzailea=?1 AND p.pasahitza=?2", Pertsona.class);
+		query.setParameter(1, erabiltzailea);
+		query.setParameter(2, pasahitza);
+		List<Pertsona> p = query.getResultList();
+		if (p.isEmpty())
+			return null;
+		else
+			return p.get(0);
+	}
 
 }

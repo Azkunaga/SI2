@@ -567,8 +567,8 @@ public class DataAccess {
 	}
 
 	public static class KuotaDirua {
-		public Float kuota;
-		public Float apustuDiru;
+		protected Float kuota;
+		protected Float apustuDiru;
 
 		public KuotaDirua(Float kuota, Float apustuDirua) {
 			this.kuota=kuota;
@@ -576,7 +576,7 @@ public class DataAccess {
 		}
 
 		public Float getKuota() {
-			return kuota;
+			return this.kuota;
 		}
 
 		public void setKuota(Float kuota) {
@@ -584,7 +584,7 @@ public class DataAccess {
 		}
 
 		public Float getApustuDiru() {
-			return apustuDiru;
+			return this.apustuDiru;
 		}
 
 		public void setApustuDiru(Float apustuDiru) {

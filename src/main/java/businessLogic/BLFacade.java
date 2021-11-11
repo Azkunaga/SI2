@@ -19,6 +19,7 @@ import exceptions.QuestionAlreadyExist;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+import Iterator.ExtendedIterator;
 import dataAccess.DataAccess.KuotaDirua;
 
 /**
@@ -49,7 +50,7 @@ public interface BLFacade {
 	 * @return collection of events
 	 */
 	@WebMethod
-	public Vector<Event> getEvents(Date date, String kirola, String txapelketa);
+	public ExtendedIterator<Event> getEvents(Date date, String kirola, String txapelketa);
 
 	/**
 	 * This method retrieves from the database the dates a month for which there are

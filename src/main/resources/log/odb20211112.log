@@ -1,0 +1,86 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2021-11-12 19:07:44 #1 store] 
+Database 'C:\Users\USU\git\SI2\src\main\resources\bets.temp' is opened by 6672@DESKTOP-JFS5NG3
+
+[2021-11-12 19:07:45 #2 type.registry] 
+New type domain.Kodea
+
+[2021-11-12 19:07:45 #3 type] 
+Type domain.Kodea is not enhanced.
+
+[2021-11-12 19:07:45 #4 type.registry] 
+New type domain.Pertsona
+
+[2021-11-12 19:07:45 #5 type.registry] 
+New type domain.Bezero
+
+[2021-11-12 19:07:45 #6 type] 
+Type domain.Pertsona is not enhanced.
+
+[2021-11-12 19:07:45 #7 type] 
+Type domain.Bezero is not enhanced.
+
+[2021-11-12 19:07:45 #8 type.registry] 
+New type java.util.Vector<domain.Kodea>
+
+[2021-11-12 19:07:45 #9 type.registry] 
+New type java.util.Vector<domain.Bezero>
+
+[2021-11-12 19:07:45 #10 type.registry] 
+New type domain.Apustua
+
+[2021-11-12 19:07:45 #11 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2021-11-12 19:07:45 #12 type.registry] 
+New type domain.Mugimendua
+
+[2021-11-12 19:07:45 #13 type.registry] 
+New type java.util.Vector<domain.Mugimendua>
+
+[2021-11-12 19:07:45 #14 type] 
+Type domain.Apustua is not enhanced.
+
+[2021-11-12 19:07:45 #15 type.registry] 
+New type domain.Pronostikoa
+
+[2021-11-12 19:07:45 #16 type.registry] 
+New type java.util.Vector<domain.Pronostikoa>
+
+[2021-11-12 19:07:45 #17 type] 
+Type domain.Mugimendua is not enhanced.
+
+[2021-11-12 19:07:45 #18 type] 
+Type domain.Pronostikoa is not enhanced.
+
+[2021-11-12 19:07:45 #19 type.registry] 
+New type domain.Question
+
+[2021-11-12 19:07:45 #20 type] 
+Type domain.Question is not enhanced.
+
+[2021-11-12 19:07:45 #21 type.registry] 
+New type domain.Event
+
+[2021-11-12 19:07:45 #22 type] 
+Type domain.Event is not enhanced.
+
+[2021-11-12 19:07:45 #23 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2021-11-12 19:07:45 #24 type.registry] 
+New type domain.Admin
+
+[2021-11-12 19:07:45 #25 type] 
+Type domain.Admin is not enhanced.
+
+[2021-11-12 19:07:45 #26 type.registry] 
+New type domain.Langilea
+
+[2021-11-12 19:07:45 #27 type] 
+Type domain.Langilea is not enhanced.
+
+[2021-11-12 19:07:45 #28 type.registry] 
+New type java.util.Vector<java.lang.Object>
+

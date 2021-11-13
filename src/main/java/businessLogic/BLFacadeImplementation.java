@@ -542,5 +542,13 @@ public class BLFacadeImplementation implements BLFacade {
 		return a;
 	}
 
+	@Override
+	public ExtendedIterator<Event> getEventsIterator(Date date, String kirola, String txapelketa) {
+		dbManager.open(false);
+		Vector<Event> events = dbManager.getEvents(date, kirola, txapelketa);
+		dbManager.close();
+		return null;
+	}
+
 
 }

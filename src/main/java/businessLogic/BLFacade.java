@@ -50,10 +50,7 @@ public interface BLFacade {
 	 * @return collection of events
 	 */
 	@WebMethod
-	public Vector<Event> getEvents(Date date, String kirola, String txapelketa);
-	
-	@WebMethod
-	public ExtendedIterator<Event> getEventsIterator(Date date, String kirola, String txapelketa);
+	public ExtendedIterator<Event> getEvents(Date date, String kirola, String txapelketa);
 
 	/**
 	 * This method retrieves from the database the dates a month for which there are

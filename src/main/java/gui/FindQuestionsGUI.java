@@ -4,6 +4,8 @@ import businessLogic.BLFacade;
 import configuration.UtilDate;
 
 import com.toedter.calendar.JCalendar;
+
+import Iterator.EventIterator;
 import domain.Question;
 import javax.swing.*;
 import java.awt.*;
@@ -157,11 +159,11 @@ public class FindQuestionsGUI extends JFrame {
 							selectedSport="Tennis";
 						else if (((String)comboSport.getSelectedItem()).equals("Basketball")||((String)comboSport.getSelectedItem()).equals("Baloncesto")||((String)comboSport.getSelectedItem()).equals("Saskibaloia"))
 							selectedSport="Basketball";
-						Vector<domain.Event> events=facade.getEvents(firstDay, selectedSport,(String) comboChampionship.getSelectedItem());
+						EventIterator<domain.Event> events=(EventIterator)facade.getEvents(firstDay, selectedSport,(String) comboChampionship.getSelectedItem());
 
-						if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
+						if (events.getListEvent().isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
 						else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
-						for (domain.Event ev:events){
+						for (domain.Event ev:events.getListEvent()){
 							Vector<Object> row = new Vector<Object>();
 
 							System.out.println("Events "+ev);

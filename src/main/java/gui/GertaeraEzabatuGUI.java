@@ -4,6 +4,9 @@ import businessLogic.BLFacade;
 import configuration.UtilDate;
 
 import com.toedter.calendar.JCalendar;
+
+import Iterator.EventIterator;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -146,10 +149,10 @@ public class GertaeraEzabatuGUI extends JFrame {
 						BLFacade facade=MainGUI.getBusinessLogic();
 						
 						
-						Vector<domain.Event> events=facade.getEvents(firstDay, selectedSport,(String) comboChampionship.getSelectedItem());
-						if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
+						EventIterator<domain.Event> events=(EventIterator)facade.getEvents(firstDay, selectedSport,(String) comboChampionship.getSelectedItem());
+						if (events.getListEvent().isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
 						else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
-						for (domain.Event ev:events){
+						for (domain.Event ev:events.getListEvent()){
 							Vector<Object> row = new Vector<Object>();
 
 							System.out.println("Events "+ev);

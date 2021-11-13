@@ -7,6 +7,8 @@ import javax.swing.*;
 
 import com.toedter.calendar.JCalendar;
 
+import Iterator.EventIterator;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
@@ -275,9 +277,9 @@ public class CreateQuestionGUI extends JFrame {
 					try {
 						BLFacade facade = MainGUI.getBusinessLogic();
 
-						Vector<domain.Event> events = facade.getEvents(firstDay, selectedSport, (String) comboChampionship.getSelectedItem());
+						EventIterator<domain.Event> events = (EventIterator)facade.getEvents(firstDay, selectedSport, (String) comboChampionship.getSelectedItem());
 
-						if (events.isEmpty())
+						if (events.getListEvent().isEmpty())
 							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
 									+ ": " + dateformat1.format(calendarAct.getTime()));
 						else
@@ -286,11 +288,11 @@ public class CreateQuestionGUI extends JFrame {
 						jComboBoxEvents.removeAllItems();
 						System.out.println("Events " + events);
 
-						for (domain.Event ev : events)
+						for (domain.Event ev : events.getListEvent())
 							modelEvents.addElement(ev);
 						jComboBoxEvents.repaint();
 
-						if (events.size() == 0)
+						if (events.getListEvent().size() == 0)
 							jButtonCreate.setEnabled(false);
 						else
 							jButtonCreate.setEnabled(true);

@@ -5,7 +5,7 @@ import java.util.Vector;
 
 import domain.Event;
 
-public class EventIterator implements ExtendedIterator<Event>{
+public class EventIterator<Event> implements ExtendedIterator<Event>{
 
 	Vector<Event> listEvent;
 	int position = 0;
@@ -14,6 +14,10 @@ public class EventIterator implements ExtendedIterator<Event>{
 		
 		listEvent = e;
 		
+	}
+	
+	public Vector<Event> getListEvent() {
+		return this.listEvent;
 	}
 	@Override
 	public boolean hasNext() {

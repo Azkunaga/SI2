@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+import Iterator.EventIterator;
 import Iterator.ExtendedIterator;
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
@@ -102,11 +103,11 @@ public class BLFacadeImplementation implements BLFacade {
 	 * @return collection of events
 	 */
 	@WebMethod
-	public Vector<Event> getEvents(Date date, String kirola, String txapelketa) {
+	public ExtendedIterator<Event> getEvents(Date date, String kirola, String txapelketa) {
 		dbManager.open(false);
 		Vector<Event> events = dbManager.getEvents(date, kirola, txapelketa);
 		dbManager.close();
-		return events;
+		return new EventIterator(events);
 	}
 
 	/**
@@ -541,14 +542,5 @@ public class BLFacadeImplementation implements BLFacade {
 		dbManager.close();
 		return a;
 	}
-
-	@Override
-	public ExtendedIterator<Event> getEventsIterator(Date date, String kirola, String txapelketa) {
-		dbManager.open(false);
-		Vector<Event> events = dbManager.getEvents(date, kirola, txapelketa);
-		dbManager.close();
-		return null;
-	}
-
 
 }

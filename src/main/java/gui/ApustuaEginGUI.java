@@ -5,6 +5,8 @@ import configuration.UtilDate;
 
 import com.toedter.calendar.JCalendar;
 
+import Iterator.EventIterator;
+import Iterator.ExtendedIterator;
 import domain.Bezero;
 import domain.Pronostikoa;
 import domain.Question;
@@ -293,11 +295,11 @@ public class ApustuaEginGUI extends JFrame {
 							selectedSport="Tennis";
 						else if (((String)comboSport.getSelectedItem()).equals("Basketball")||((String)comboSport.getSelectedItem()).equals("Baloncesto")||((String)comboSport.getSelectedItem()).equals("Saskibaloia"))
 							selectedSport="Basketball";
-						Vector<domain.Event> events=facade.getEvents(firstDay, selectedSport,(String) comboChampionship.getSelectedItem());
-
-						if (events.isEmpty() ) lblEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
+						
+						EventIterator<domain.Event> events=(EventIterator)facade.getEvents(firstDay, selectedSport,(String) comboChampionship.getSelectedItem());
+						if (events.getListEvent().isEmpty() ) lblEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
 						else lblEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
-						for (domain.Event ev:events){
+						for (domain.Event ev:events.getListEvent()){
 							Vector<Object> row = new Vector<Object>();
 
 							System.out.println("Events "+ev);

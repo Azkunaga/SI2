@@ -2,7 +2,7 @@ package Iterator;
 
 import java.util.Iterator;
 
-public interface ExtendedIterator<Event> extends Iterator {
+public interface ExtendedIterator<Event> extends Iterator<Event> {
 	//uneko elementua itzultzen du eta aurrekora pasatzen da
 	public Object previous();
 	//true aurreko elementua existitzen bada.

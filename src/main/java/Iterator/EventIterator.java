@@ -26,7 +26,7 @@ public class EventIterator<Event> implements ExtendedIterator<Event>{
 	}
 
 	@Override
-	public Object next() {
+	public Event next() {
 		
 		Event e = listEvent.get(position);
 		position++;
@@ -34,7 +34,7 @@ public class EventIterator<Event> implements ExtendedIterator<Event>{
 	}
 
 	@Override
-	public Object previous() {
+	public Event previous() {
 		
 		Event e = listEvent.get(position);
 		position--;

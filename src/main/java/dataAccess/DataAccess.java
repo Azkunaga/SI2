@@ -180,6 +180,9 @@ public class DataAccess {
 			b1.addMugimendua(10, etiketa.getString("DiruaSartu"), true);
 			b2.addDirua(10);
 			b2.addMugimendua(10, etiketa.getString("DiruaSartu"), true);
+			Vector<Pronostikoa> a= new Vector<Pronostikoa>();
+			a.add(p3);
+			b1.addApustua(10, a, null, p3.getKuota());
 
 			Kodea k1 = b1.addUnekoKodea();
 			k1.setUsed(true);

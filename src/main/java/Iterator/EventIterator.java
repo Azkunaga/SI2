@@ -1,47 +1,56 @@
 package Iterator;
 
-public class EventIterator implements ExtendedIterator{
+import java.util.List;
+import java.util.Vector;
 
+import domain.Event;
+
+public class EventIterator implements ExtendedIterator<Event>{
+
+	Vector<Event> listEvent;
+	int position = 0;
 	
-	
-	public EventIterator() {
+	public EventIterator(Vector<Event> e) {
+		
+		listEvent = e;
 		
 	}
 	@Override
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
 		
-		return false;
+		return position < listEvent.size();
 	}
 
 	@Override
 	public Object next() {
 		
-		// TODO Auto-generated method stub
-		return null;
+		Event e = listEvent.get(position);
+		position++;
+		return e;
 	}
 
 	@Override
 	public Object previous() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Event e = listEvent.get(position);
+		position--;
+		return e;
 	}
 
 	@Override
 	public boolean hasPrevious() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return position >= 0;
 	}
 
 	@Override
 	public void goFirst() {
-		// TODO Auto-generated method stub
-		
+		position = 0;
 	}
 
 	@Override
 	public void goLast() {
-		// TODO Auto-generated method stub
+		position = listEvent.size();
 		
 	}
 
